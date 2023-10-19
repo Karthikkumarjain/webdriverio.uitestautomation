@@ -1,4 +1,10 @@
-# Creation of project form scratch
+# Framework development in progress
+
+## Will be updated soon.
+
+
+
+# Creation of project from scratch
 
 npm init -y
 npm init wdio
