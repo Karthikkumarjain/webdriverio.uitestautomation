@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker'
+
 class ContactPage {
   get contactPageButton() {
     return $("#menu-item-493");
@@ -23,10 +25,10 @@ class ContactPage {
   }
 
   async createAndSubmitForm() {
-    await this.firstNameField.setValue("SDET");
-    await this.emailField.addValue("sde@gmail.com");
+    await this.firstNameField.setValue(faker.person.firstName());
+    await this.emailField.addValue(faker.internet.email());
     await this.phoneField.setValue("1234567890");
-    await this.messageField.addValue("This is a test message");
+    await this.messageField.addValue(faker.lorem.paragraph());
     await expect(this.btnSubmit).toBeClickable();
     await this.btnSubmit.click();
   }
