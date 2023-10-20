@@ -19,8 +19,9 @@ to run a speicific spec file ffrom cli:
 npx wdio --spec test/specs/home.js
 to have report:
 npx allure generate allure-results  && npx allure open
-to run on 
-BROWSERSTACK_USERNAME=karthikkumarb_nKuAyW BROWSERSTACK_ACCESS_KEY=RpN36jiCuJvFpj2mRw7i npx wdio 
+to run on browserstack
+uncomment servcies which has browser stack and provide the below details on runtime and execute on brwoserstack
+BROWSERSTACK_USERNAME= BROWSERSTACK_ACCESS_KEY= npx wdio 
 
 #install 
 lint-https://www.npmjs.com/package/eslint-plugin-wdio
