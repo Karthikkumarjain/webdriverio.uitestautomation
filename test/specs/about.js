@@ -1,5 +1,8 @@
+import allureReporter from "@wdio/allure-reporter";
 describe("Test to verify the about page", () => {
   it("Verify the headings H3 content", async () => {
+    allureReporter.addSeverity("Critical");
+    allureReporter.addFeature("About Page");
     const expectedHeadings = [
       "Our Story",
       "Our Mission",

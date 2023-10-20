@@ -15,7 +15,7 @@ describe("Launch Chrome", () => {
     HomePage.btnGetStarted.click();
     await expect(browser).toHaveUrlContaining("started");
   });
-
+                                          
   it("get text and validate", async () => {
   
     const textValue = await HomePage.elementWidget.getText();
