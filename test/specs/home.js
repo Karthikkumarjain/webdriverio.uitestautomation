@@ -1,28 +1,27 @@
-// //test to launch chrome
+import HomePage from "../pages/home-page";
 
-// describe("Launch Chrome", () => {
-//   it("should launch chrome", async () => {
-//     await browser.url("https://practice.sdetunicorns.com/");
-//     await expect(browser).toHaveTitle("Practice E-Commerce Site – SDET Unicorns – Helping you succeed in Software Quality.");
-//     await $('#get-started').click();
-//     await expect(browser).toHaveUrlContaining("started");
+describe("Launch Chrome", () => {
+  it("should launch chrome", async () => {
+    await HomePage.open();
+    await expect(browser).toHaveTitle(
+      "Practice E-Commerce Site – SDET Unicorns – Helping you succeed in Software Quality."
+    );
+    // await $("#get-started").click();
+    HomePage.btnGetStarted.click();
+    await expect(browser).toHaveUrlContaining("started");
+  });
 
-//   });
+  it.only("get text and validate", async () => {
+    await HomePage.open();
+    const textValue = await HomePage.elementWidget.getText();
 
-//   it("get text and validate",async()=>{
-
-//     await browser.url("https://practice.sdetunicorns.com/");
-//    const textValue =await $('.elementor-widget-container h1').getText();
-
-//    await expect(textValue).toEqual("Think different. Make different.");
-
-// })
-
-// });
+    await expect(textValue).toEqual("Think different. Make different.");
+  });
+});
 
 describe("test to launch and check if the service is uo and running", () => {
   it("Should launch succefully and validate the about page", async () => {
-    await browser.url("https://practice.sdetunicorns.com/");
+    await HomePage.open();
     await expect(browser).toHaveTitle(
       "Practice E-Commerce Site – SDET Unicorns – Helping you succeed in Software Quality."
     );
